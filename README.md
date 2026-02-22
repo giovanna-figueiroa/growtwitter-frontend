@@ -84,10 +84,9 @@ Para testar as funcionalidades do Growtwitter, siga os cenários abaixo:
 2. Digite o conteúdo e publique.
 3. Verifique se o tweet aparece no topo da lista imediatamente.
 
-### Cenário 3: Curtir um Tweet (Persistente )
+### Cenário 3: Curtir um Tweet
 1. Clique no ícone de coração em qualquer tweet.
 2. O ícone ficará vermelho e o contador subirá.
-3. Mude de página (vá para Perfil) e volte para o Feed. O like deve continuar lá.
 
 ### Cenário 4: Responder a um Tweet
 1. Clique no ícone de balão de fala.
