@@ -36,18 +36,38 @@ interface Usuario {
   criadoEm: string;
 }
 
+interface SeguidosMap {
+  [key: number]: boolean;
+}
+
 export function Explorar() {
   const navigate = useNavigate();
   const [usuarioLogado, setUsuarioLogado] = React.useState<UsuarioLogado | null>(null);
   const [usuarios, setUsuarios] = React.useState<Usuario[]>([]);
   const [busca, setBusca] = React.useState('');
   const [carregando, setCarregando] = React.useState(true);
+  const [seguidos, setSeguidos] = React.useState<SeguidosMap>({});
 
   React.useEffect(() => {
     const u = localStorage.getItem('usuario');
     if (u) setUsuarioLogado(JSON.parse(u));
     carregarUsuarios();
+    carregarSeguidos();
   }, []);
+
+  function carregarSeguidos() {
+    const seguidosArmazenados = localStorage.getItem('seguidos');
+    if (seguidosArmazenados) {
+      setSeguidos(JSON.parse(seguidosArmazenados));
+    }
+  }
+
+  function handleFollow(usuarioId: number) {
+    const novosSeguidos = { ...seguidos };
+    novosSeguidos[usuarioId] = !novosSeguidos[usuarioId];
+    setSeguidos(novosSeguidos);
+    localStorage.setItem('seguidos', JSON.stringify(novosSeguidos));
+  }
 
   async function carregarUsuarios() {
     try {
@@ -166,14 +186,32 @@ export function Explorar() {
                       @{usuario.username}
                     </Typography>
                   </Box>
-                  <Button
-                    variant="outlined"
-                    size="small"
-                    sx={{ borderRadius: '20px', borderColor: '#1da1f2', color: '#1da1f2' }}
-                    onClick={() => navigate(`/perfil/${usuario.id}`)}
-                  >
-                    Ver perfil
-                  </Button>
+                  <Box sx={{ display: 'flex', gap: 1 }}>
+                    <Button
+                      variant="outlined"
+                      size="small"
+                      sx={{ borderRadius: '20px', borderColor: '#1da1f2', color: '#1da1f2' }}
+                      onClick={() => navigate(`/perfil/${usuario.id}`)}
+                    >
+                      Ver perfil
+                    </Button>
+                    <Button
+                      variant={seguidos[usuario.id] ? 'contained' : 'outlined'}
+                      size="small"
+                      sx={{
+                        borderRadius: '20px',
+                        borderColor: '#1da1f2',
+                        backgroundColor: seguidos[usuario.id] ? '#1da1f2' : 'transparent',
+                        color: seguidos[usuario.id] ? 'white' : '#1da1f2',
+                        '&:hover': {
+                          backgroundColor: seguidos[usuario.id] ? '#1a8cd8' : 'rgba(29, 161, 242, 0.1)',
+                        },
+                      }}
+                      onClick={() => handleFollow(usuario.id)}
+                    >
+                      {seguidos[usuario.id] ? 'Seguindo' : 'Seguir'}
+                    </Button>
+                  </Box>
                 </Box>
               ))
             )}

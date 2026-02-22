@@ -73,11 +73,30 @@ export function Profile() {
     const saved = localStorage.getItem('likedTweets');
     return saved ? new Set(JSON.parse(saved)) : new Set();
   });
+  const [seguidos, setSeguidos] = React.useState<{ [key: number]: boolean }>(() => {
+    const saved = localStorage.getItem('seguidos');
+    return saved ? JSON.parse(saved) : {};
+  });
 
   React.useEffect(() => {
     const u = localStorage.getItem('usuario');
     if (u) setUsuarioLogado(JSON.parse(u));
+    carregarSeguidos();
   }, []);
+
+  function carregarSeguidos() {
+    const seguidosArmazenados = localStorage.getItem('seguidos');
+    if (seguidosArmazenados) {
+      setSeguidos(JSON.parse(seguidosArmazenados));
+    }
+  }
+
+  function handleFollow(usuarioId: number) {
+    const novosSeguidos = { ...seguidos };
+    novosSeguidos[usuarioId] = !novosSeguidos[usuarioId];
+    setSeguidos(novosSeguidos);
+    localStorage.setItem('seguidos', JSON.stringify(novosSeguidos));
+  }
 
   const usuarioId = id || (usuarioLogado ? String(usuarioLogado.id) : null);
 
@@ -226,11 +245,20 @@ export function Profile() {
                 </Box>
                 {!isProprioPeril && (
                   <Button
-                    variant="outlined"
+                    variant={seguidos[Number(usuarioId)] ? 'contained' : 'outlined'}
                     className="follow-button"
-                    sx={{ borderRadius: '20px' }}
+                    sx={{
+                      borderRadius: '20px',
+                      borderColor: '#1da1f2',
+                      backgroundColor: seguidos[Number(usuarioId)] ? '#1da1f2' : 'transparent',
+                      color: seguidos[Number(usuarioId)] ? 'white' : '#1da1f2',
+                      '&:hover': {
+                        backgroundColor: seguidos[Number(usuarioId)] ? '#1a8cd8' : 'rgba(29, 161, 242, 0.1)',
+                      },
+                    }}
+                    onClick={() => handleFollow(Number(usuarioId))}
                   >
-                    Seguir
+                    {seguidos[Number(usuarioId)] ? 'Seguindo' : 'Seguir'}
                   </Button>
                 )}
               </Box>

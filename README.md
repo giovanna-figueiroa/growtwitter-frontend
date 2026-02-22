@@ -31,6 +31,7 @@ O projeto Growtwitter oferece as seguintes funcionalidades:
 ## 🚀 Tecnologias Utilizadas
 
 -   **Frontend:**
+<<<<<<< HEAD
     -   [React](https://react.dev/): Biblioteca JavaScript para construção de interfaces de usuário.
     -   [Vite](https://vitejs.dev/): Ferramenta de build rápida para projetos web modernos.
     -   [TypeScript](https://www.typescriptlang.org/): Superset do JavaScript que adiciona tipagem estática.
@@ -39,6 +40,16 @@ O projeto Growtwitter oferece as seguintes funcionalidades:
     -   [Axios](https://axios-http.com/): Cliente HTTP para fazer requisições à API.
 -   **API:**
     -   [Growtwitter API (Backend)](https://backend-growtwitter.onrender.com/api-docs): API RESTful externa fornecida pela Growdev para gerenciamento de dados.
+=======
+    -   [React](https://react.dev/ ): Biblioteca JavaScript para construção de interfaces de usuário.
+    -   [Vite](https://vitejs.dev/ ): Ferramenta de build rápida para projetos web modernos.
+    -   [TypeScript](https://www.typescriptlang.org/ ): Superset do JavaScript que adiciona tipagem estática.
+    -   [Material-UI (MUI)](https://mui.com/ ): Biblioteca de componentes React para um design elegante e responsivo.
+    -   [React Router DOM](https://reactrouter.com/en/main ): Para gerenciamento de rotas na aplicação.
+    -   [Axios](https://axios-http.com/ ): Cliente HTTP para fazer requisições à API.
+-   **API:**
+    -   [Growtwitter API (Backend)](https://backend-growtwitter.onrender.com/api-docs ): API RESTful externa fornecida pela Growdev para gerenciamento de dados.
+>>>>>>> 084a3d598a1b072601ce40f8ea0672091922f6de
 
 ## ⚙️ Como Rodar o Projeto Localmente
 
@@ -46,7 +57,11 @@ Siga os passos abaixo para configurar e executar o projeto em sua máquina local
 
 ### Pré-requisitos
 
+<<<<<<< HEAD
 Certifique-se de ter o [Node.js](https://nodejs.org/en/) (versão 18 ou superior) e o [npm](https://www.npmjs.com/) (gerenciador de pacotes do Node.js) instalados.
+=======
+Certifique-se de ter o [Node.js](https://nodejs.org/en/ ) (versão 18 ou superior) e o [npm](https://www.npmjs.com/ ) (gerenciador de pacotes do Node.js) instalados.
+>>>>>>> 084a3d598a1b072601ce40f8ea0672091922f6de
 
 ### Instalação
 
@@ -55,7 +70,10 @@ Certifique-se de ter o [Node.js](https://nodejs.org/en/) (versão 18 ou superior
     git clone https://github.com/seu-usuario/growtwitter-frontend.git
     cd growtwitter-frontend
     ```
+<<<<<<< HEAD
     *(Substitua `seu-usuario` pelo seu nome de usuário do GitHub e `growtwitter-frontend` pelo nome do seu repositório.)*
+=======
+>>>>>>> 084a3d598a1b072601ce40f8ea0672091922f6de
 
 2.  **Instale as dependências** do projeto:
     ```bash
@@ -76,6 +94,7 @@ Certifique-se de ter o [Node.js](https://nodejs.org/en/) (versão 18 ou superior
 Para testar as funcionalidades do Growtwitter, siga os cenários abaixo:
 
 ### Cenário 1: Cadastro e Login
+<<<<<<< HEAD
 
 1.  Acesse a aplicação (`http://localhost:5173`). Você será redirecionado para a página de login.
 2.  Clique em "Cadastre-se" para criar uma nova conta.
@@ -122,7 +141,39 @@ Para testar as funcionalidades do Growtwitter, siga os cenários abaixo:
 ## ☁️ Deploy
 
 Este projeto pode ser facilmente deployado em plataformas como a [Vercel](https://vercel.com/). Para instruções detalhadas sobre como fazer o deploy, consulte a documentação específica da plataforma e as instruções fornecidas anteriormente.
+=======
+1. Acesse a aplicação. Você será redirecionado para o login.
+2. Clique em "Cadastre-se", preencha os dados e cadastre.
+3. Faça login com a conta criada e verifique se entrou no Feed.
+
+### Cenário 2: Publicar um Tweet
+1. No Feed, clique no botão "Tweetar".
+2. Digite o conteúdo e publique.
+3. Verifique se o tweet aparece no topo da lista imediatamente.
+
+### Cenário 3: Curtir um Tweet
+1. Clique no ícone de coração em qualquer tweet.
+2. O ícone ficará vermelho e o contador subirá.
+
+### Cenário 4: Responder a um Tweet
+1. Clique no ícone de balão de fala.
+2. Digite sua resposta e clique em "Responder".
+3. Verifique se a resposta aparece logo abaixo do tweet original.
+
+### Cenário 5: Perfil e Explorar
+1. Vá em "Explorar" e busque por um usuário.
+2. Clique no usuário para ver o perfil dele.
+3. Verifique se o layout (capa, avatar e nome) está alinhado corretamente.
 
 ## 🧑‍💻 Autor
 
+Desenvolvido por Giovanna Figueiroa.
+>>>>>>> 084a3d598a1b072601ce40f8ea0672091922f6de
+
+## 🧑‍💻 Autor
+
+<<<<<<< HEAD
 Desenvolvido por Manus AI.
+=======
+
+>>>>>>> 084a3d598a1b072601ce40f8ea0672091922f6de
