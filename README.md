@@ -169,8 +169,4 @@ Este projeto pode ser facilmente deployado em plataformas como a [Vercel](https:
 
 Desenvolvido por Giovanna Figueiroa.
 
-<<<<<<< HEAD
-Desenvolvido por Manus AI.
-=======
-
 >>>>>>> 084a3d598a1b072601ce40f8ea0672091922f6de
